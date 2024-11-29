@@ -9,9 +9,14 @@
   align-items: center;
 
   .profile-card {
+    // card blur
     background-color: rgba($background, 0.6);
     backdrop-filter: blur(2em);
     -webkit-backdrop-filter: blur(5px);
+
+    // glowing border
+    outline: none;
+    box-shadow: 0 0 1em $blue;
 
     display: flex;
     flex-direction: column;
