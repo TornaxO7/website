@@ -49,6 +49,11 @@
 
           width: 4em;
           height: 3em;
+          transition: 0.3s;
+        }
+
+        .icon:hover {
+          color: $green;
         }
       }
     }
