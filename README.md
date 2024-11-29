@@ -1,4 +1,4 @@
-This repository contains my personal website. This is still in progress. You can see it here: [https://tornaxo7.de].
+This repository contains my personal website. This is still in progress. You can see it here: https://tornaxo7.de.
 
 # Credits
 
