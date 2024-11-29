@@ -1,3 +1,29 @@
 {% extends "base.html" %} {% block content %}
-<h1 class="title">This is my blog made with Zola.</h1>
-{% endblock content %}
+<div class="container">
+  <div class="profile-card">
+    <h1 class="card-title">{{ config.author }}</h1>
+
+    <img
+      class="profile-picture"
+      src="/{{ config.extra.profile_picture }}"
+      alt="me"
+    />
+
+    <h2 class="description">{{config.extra.description}}</h2>
+
+    <div class="social-accounts">
+      <a href="https://github.com/TornaxO7">
+        {% include "icons/github.html" %}
+      </a>
+
+      <a href="https://www.reddit.com/user/TornaxO7/">
+        {% include "icons/reddit.html" %}
+      </a>
+
+      <a href="https://mastodon.social/@TornaxO7">
+        {% include "icons/mastodon.html" %}
+      </a>
+    </div>
+  </div>
+  {% endblock content %}
+</div>

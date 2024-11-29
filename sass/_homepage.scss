@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  height: 100vh;
+
+  // center the card
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .profile-card {
+    background-color: rgba($background, 0.6);
+    backdrop-filter: blur(2em);
+    -webkit-backdrop-filter: blur(5px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    padding: 2em;
+
+    border-radius: 2em;
+
+    .card-title {
+      color: $blue;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .profile-picture {
+      aspect-ratio: 2560 / 1600;
+      width: 25em;
+    }
+
+    .description {
+      color: $foreground;
+    }
+
+    .social-accounts {
+      a {
+        .icon {
+          color: $cyan;
+
+          width: 4em;
+          height: 3em;
+        }
+      }
+    }
+  } 
+}
+

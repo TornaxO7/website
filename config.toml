@@ -19,7 +19,7 @@ preserve_dotfiles_in_output = false
 
 # When set to "true", the Sass files in the `sass` directory in the site root are compiled.
 # Sass files in theme directories are always compiled.
-compile_sass = false
+compile_sass = true
 
 # When set to "true", a feed is automatically generated.
 generate_feeds = true
@@ -136,11 +136,5 @@ index_format = "elasticlunr_javascript"
 # author value will be available using {{ config.extra.author }} in templates
 #
 [extra]
-author = "TornaxO7"
-author_image = "pikachu.jpg"
-city = "Karlsruhe"
-
-links = [
-  { url = "", title = "", icon = "fab fa-github" },
-  { url = "", title = "", icon = "fab fa-github" },
-]
+profile_picture = "pikachu.jpg"
+description = "A wild pikadsu! c(^-^)c"
