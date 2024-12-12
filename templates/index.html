@@ -1,4 +1,10 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+
+<!-- Shader -->
+{% block header %} {% include "shaders/starfield.html" %} {% endblock header %}
+
+<!-- Content -->
+{% block content %}
 <div class="container">
   <div class="profile-card">
     <h1 class="card-title">{{ config.author }}</h1>

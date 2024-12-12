@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
 
-    {% include "shader.html" %}
+    {% block header %} {% endblock header %}
   </head>
   <body>
     <main class="main">{% block content %} {% endblock content %}</main>
