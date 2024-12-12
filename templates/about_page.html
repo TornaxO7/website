@@ -8,12 +8,6 @@
 
   <!-- Actual content -->
   {{ section.content | safe }}
-
-  <ul>
-    {% for page in section.pages%}
-    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-    {% endfor %}
-  </ul>
 </div>
 
 {% endblock content %}
