@@ -27,6 +27,16 @@
 
     border-radius: 2em;
 
+    .nav-bar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .further-links {
+        color: $cyan;
+      }
+    }
+
     .card-title {
       color: $blue;
       text-decoration: underline;

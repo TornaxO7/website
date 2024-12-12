@@ -1,13 +1,25 @@
+html {
+  background-color: $background;
+  color: $foreground;
+}
+
 main {
   margin: 0;
   width: 100%;
   min-height: 100vh;
 }
 
-.font-medium {
-  font-weight: 500;
+.font-size-medium {
+  font-size: 1.75rem;
 }
 
-.font-thin  {
-  font-weight: 300;
+.font-size-small {
+  font-size: 1.4rem;
+}
+
+.emoji {
+  width: 2em;
+  height: 2em;
+
+  padding: 1em;
 }

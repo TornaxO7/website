@@ -7,6 +7,16 @@
 {% block content %}
 <div class="container">
   <div class="profile-card">
+    <div class="nav-bar">
+      <a class="further-links font-size-medium">About</a>
+      <a
+        href="{{ get_url(path='@/blog/_index.md') }}"
+        class="further-links font-size-medium"
+      >
+        Blog
+      </a>
+    </div>
+
     <h1 class="card-title">{{ config.author }}</h1>
 
     <img

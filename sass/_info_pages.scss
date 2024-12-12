@@ -1,0 +1,33 @@
+.info-page {
+  font-size: 1.25rem;
+}
+
+.title {
+  color: $blue;
+  text-decoration-line: underline;
+  text-align: center;
+  flex-grow: 2;
+}
+
+.info-top-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  color: $green;
+  text-decoration: None;
+}
+
+.back-button-element {
+  padding: 0.2em;
+}

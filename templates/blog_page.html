@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+<!-- Content -->
+{% block content %}
+
+<div class="info-page">
+  <div class="info-top-bar">
+    <a href="/" class="font-size-small back-button-container">
+      <img class="emoji back-button-element" src="/peepoExit.png" />
+      Back
+    </a>
+
+    <h1 class="title">{{ section.title }}</h1>
+    <img class="emoji" src="/peepoAwesome.png" />
+  </div>
+
+  {{ section.content | safe }}
+
+  <ul>
+    {% for page in section.pages%}
+    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock content %}
