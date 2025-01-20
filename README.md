@@ -8,7 +8,6 @@ Shoutout to:
 - [zola] for creating this
 - [ntun (zola theme)] which I took inspiration from for the format
 - [tokyonight.nvim] so that I can include some colors of it
-- [vanishka] for [the gorgeous shader](https://www.shadertoy.com/view/XctBRN) which I'm using for my background
 
 [zola]: https://www.getzola.org/
 [shader-web-background]: https://github.com/xemantic/shader-web-background?tab=readme-ov-file
