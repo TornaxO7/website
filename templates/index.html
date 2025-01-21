@@ -6,7 +6,7 @@
 <!-- Content -->
 {% block content %}
 <div class="container">
-  <div class="profile-card">
+  <div class="profile-card column">
     <div class="nav-bar">
       <a
         href="{{ get_url(path='@/about/_index.md') }}"
@@ -21,7 +21,7 @@
       </a>
     </div>
 
-    <h1 class="card-title">{{ config.author }}</h1>
+    <div class="card-title font-size-big">{{ config.author }}</div>
 
     <img
       class="profile-picture"
@@ -29,9 +29,7 @@
       alt="me"
     />
 
-    <h2 class="description">{{config.extra.description}}</h2>
-
-    <div class="social-accounts">
+    <div class="social-accounts row">
       <a href="https://github.com/TornaxO7" title="Github">
         {% include "icons/github.html" %}
       </a>

@@ -9,12 +9,16 @@ main {
   min-height: 100dvh;
 }
 
+.font-size-big {
+  font-size: max(min(5dvh, .9cm), .6cm);
+}
+
 .font-size-medium {
-  font-size: 1.75rem;
+  font-size: max(min(3dvh, .7cm), .5cm);
 }
 
 .font-size-small {
-  font-size: 1.4rem;
+  font-size: .3cm;
 }
 
 .emoji {
@@ -22,4 +26,20 @@ main {
   height: 2em;
 
   padding: 1em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  align-content: center
 }

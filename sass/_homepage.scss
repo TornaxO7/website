@@ -13,6 +13,12 @@ body {
   align-items: center;
 
   .profile-card {
+    min-height: 6cm;
+    min-width: 5cm;
+
+    max-width: 30dvh;
+    max-height: 35dvh;
+
     // card blur
     background-color: rgba($background, 0.6);
     backdrop-filter: blur(2em);
@@ -22,13 +28,8 @@ body {
     outline: none;
     box-shadow: 0 0 1em $blue;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-content: center;
-    padding: 2em;
-
+    padding: 2em 1em;
+    
     border-radius: 2em;
 
     .nav-bar {
@@ -36,6 +37,9 @@ body {
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
+      /* background: red; */
+
+      padding: 1vh;
 
       .further-links {
         color: $cyan;
@@ -46,23 +50,22 @@ body {
       color: $blue;
       text-decoration: underline;
       font-weight: bold;
+      /* background: blue; */
+      padding-bottom: 2vh;
     }
 
     .profile-picture {
       aspect-ratio: 2560 / 1600;
-      width: 25em;
-    }
-
-    .description {
-      color: $foreground;
     }
 
     .social-accounts {
+      padding-top: 2dvh;
       a {
         .icon {
           color: $cyan;
 
-          width: 4em;
+          /* width: 4vh; */
+          width: max(4dvh, .8cm);
           height: 3em;
           transition: 0.3s;
         }
