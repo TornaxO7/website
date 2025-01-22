@@ -3,17 +3,19 @@
 <!-- Content -->
 {% block content %}
 
-<div class="sub-page">
-  {% include "top_bar.html" %}
+<div class="info-page-container">
+  <div class="info-page">
+    {% include "top_bar.html" %}
 
-  <!-- Actual content -->
-  {{ section.content | safe }}
+    <!-- Actual content -->
+    <div class="info-block">{{ section.content | safe }}</div>
 
-  <ul>
-    {% for page in section.pages%}
-    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-    {% endfor %}
-  </ul>
+    <ul>
+      {% for page in section.pages%}
+      <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
 
 {% endblock content %}
