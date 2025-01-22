@@ -1,5 +1,40 @@
-.sub-page {
-  font-size: 1.25rem;
+// Info pages are pages which contain extra information like the
+// about page and blog.
+
+.info-page-container {
+  @extend
+    // to center the stuff
+    .row;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.info-page {
+  @extend
+    .column;
+
+  width: 20cm;
+  height: 100vh;
+  margin: 4dvh;
+
+  // let the content of the page start from the top
+  justify-content: flex-start;
+}
+
+.info-content {
+  @extend
+    .blur-strong,
+    .rounded-corner,
+    .glowing-border,
+    .font-size-small;
+
+  // distance to the top bar
+  margin-top: 3cm;
+
+  /* background: red; */
+  text-align: left;
+  padding: 1em;
 }
 
 .title {
@@ -7,27 +42,4 @@
   text-decoration-line: underline;
   text-align: center;
   flex-grow: 2;
-}
-
-.info-top-bar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-flow: space-around;
-  justify-content: center;
-  align-items: center;
-}
-
-.back-button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  color: $green;
-  text-decoration: None;
-}
-
-.back-button-element {
-  padding: 0.2em;
 }

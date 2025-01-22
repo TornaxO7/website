@@ -1,0 +1,33 @@
+.top-bar {
+  @extend
+    .row,
+    .blur-strong,
+    .rounded-corner,
+    .glowing-border;
+
+  justify-content: space-around;
+  padding: 1em;
+
+  .top-bar-left {
+    @extend
+      .row;
+
+    flex-grow: 1;
+
+    .emoji {
+      width: 1cm;
+    };
+  }
+
+  .top-bar-center {
+    @extend
+      .title,
+      .column;
+
+    flex-grow: 2;
+  };
+
+  .top-bar-right {
+    flex-grow: 1;
+  }
+}

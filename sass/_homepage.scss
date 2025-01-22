@@ -13,24 +13,18 @@ body {
   align-items: center;
 
   .profile-card {
+    @extend
+      .rounded-corner,
+      .glowing-border;
     min-height: 6cm;
     min-width: 5cm;
 
     max-width: 30dvh;
     max-height: 35dvh;
 
-    // card blur
     background-color: rgba($background, 0.6);
-    backdrop-filter: blur(2em);
-    -webkit-backdrop-filter: blur(5px);
-
-    // glowing border
-    outline: none;
-    box-shadow: 0 0 1em $blue;
 
     padding: 2em 1em;
-    
-    border-radius: 2em;
 
     .nav-bar {
       display: flex;
@@ -47,6 +41,8 @@ body {
     }
 
     .card-title {
+      @extend
+        .title;
       color: $blue;
       text-decoration: underline;
       font-weight: bold;

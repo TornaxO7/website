@@ -1,6 +1,7 @@
 html {
   background-color: $background;
   color: $foreground;
+  font-family: "Arial"
 }
 
 main {
@@ -10,22 +11,15 @@ main {
 }
 
 .font-size-big {
-  font-size: max(min(5dvh, .9cm), .6cm);
+  font-size: max(min(5dvh, .7cm), .6cm);
 }
 
 .font-size-medium {
-  font-size: max(min(3dvh, .7cm), .5cm);
+  font-size: max(min(3dvh, .6cm), .5cm);
 }
 
 .font-size-small {
-  font-size: .3cm;
-}
-
-.emoji {
-  width: 2em;
-  height: 2em;
-
-  padding: 1em;
+  font-size: max(min(2dvh, .5cm), .4cm);
 }
 
 .column {
@@ -42,4 +36,38 @@ main {
   justify-content: space-evenly;
   text-align: center;
   align-content: center
+}
+
+.blur-light {
+  $strength: 2px;
+
+  backdrop-filter: blur($strength);
+  -webkit-backdrop-filter: blur($strength);
+}
+
+.blur-strong {
+  $strength: 50px;
+
+  backdrop-filter: blur($strength);
+  -webkit-backdrop-filter: blur($strength);
+}
+
+.glowing-border {
+  outline: none;
+  box-shadow: 0 0 2em $blue;
+  border-color: $blue;
+  border-style: solid;
+}
+
+.rounded-corner {
+  border-radius: 2em;
+}
+
+.title {
+  @extend
+    .font-size-big;
+
+  text-decoration: underline;
+  font-weight: bold;
+  color: $selection-foreground;
 }
