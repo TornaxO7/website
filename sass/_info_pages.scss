@@ -1,6 +1,8 @@
 // Info pages are pages which contain extra information like the
 // about page and blog.
 
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
+
 .info-page-container {
   @extend
     // to center the stuff
@@ -35,6 +37,10 @@
   /* background: red; */
   text-align: left;
   padding: 1em;
+
+  img {
+    width: max(min(5dvh, .7cm), .6cm);
+  }
 }
 
 .title {
