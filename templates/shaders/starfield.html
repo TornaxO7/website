@@ -30,13 +30,14 @@
 
   void mainImage( out vec4 fragColor, in vec2 fragCoord )
   {
-      vec2 uv = fragCoord/iResolution.xy - .5;
-      uv.x *= iResolution.x / iResolution.y;
+      vec2 uv = fragCoord/iResolution.xy;
 
-      uv *= 20.;
-
-      float m = 0.;
+      float m = smoothstep(.9, -1.5, length(uv.y));
       float time = iTime * .1;
+
+      uv -= .5;
+      uv.x *= iResolution.x / iResolution.y;
+      uv *= 20.;
 
       const float amount_layers = 10.;
       for (float i = 0.; i < amount_layers; i += 1.) {
@@ -50,7 +51,7 @@
           m += drawLayer(lv, time) * fade;
       }
 
-      vec3 base_color = sin(time * 5. * vec3(1., 2., 3.)) * .4 + .6;
+      vec3 base_color = sin(time * 5. * vec3(1.5, 3., 7.)) * .25 + .75;
       vec3 col = base_color * m;
 
       fragColor = vec4(col, 1.);
