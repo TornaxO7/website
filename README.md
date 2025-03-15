@@ -14,4 +14,3 @@ Shoutout to:
 [shadertoy]: https://www.shadertoy.com/
 [ntun (zola theme)]: https://www.getzola.org/themes/ntun/
 [tokyonight.nvim]: https://github.com/folke/tokyonight.nvim
-[vanishka]: https://www.shadertoy.com/user/vanshika
