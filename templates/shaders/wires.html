@@ -1,0 +1,69 @@
+<script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
+
+<script type="x-shader/x-fragment" id="Image">
+  precision highp float;
+
+  uniform vec2  iResolution;
+  uniform float iTime;
+
+  const float PI = 3.1415926;
+
+  // noise functions: https://www.shadertoy.com/view/4djSRW
+  float hash12(vec2 p)
+  {
+  	vec3 p3 = fract(vec3(p.xyx) * .1031);
+      p3 += dot(p3, p3.yzx + 33.33);
+      return fract((p3.x + p3.y) * p3.z);
+  }
+
+  mat2 rotate(float radian) {
+      return mat2(cos(radian), -sin(radian), sin(radian), cos(radian));
+  }
+
+  float truchet_tile(vec2 uv) {
+      vec2 id = floor(uv);
+      vec2 gv = fract(uv) - .5;
+
+      if (hash12(id) < .5) {
+          gv.x = -gv.x;
+      }
+
+      float lines = abs(abs(gv.x + gv.y) - .5);
+      lines = .05 / lines;
+
+      return lines;
+  }
+
+  void mainImage( out vec4 fragColor, in vec2 fragCoord )
+  {
+      vec3 col = vec3(0.);
+
+      vec2 uv = gl_FragCoord.xy / iResolution.xy;
+      uv.x *= iResolution.x / iResolution.y;
+
+      float light = truchet_tile(rotate(iTime * .01) * (uv + vec2(cos(iTime * .05), sin(iTime * .05))) * 2.);
+      float wires = smoothstep(0., .1, truchet_tile(uv * 10.) - 1.);
+
+      vec3 base_color = sin(vec3(rotate(iTime * 2.) * uv, .3) + iTime) * .2 + .7;
+      col += base_color * wires * light;
+      fragColor = vec4(col, 1.);
+  }
+  // -- End of Shadertoy code
+
+  void main() {
+    mainImage(gl_FragColor, gl_FragCoord.xy);
+  }
+</script>
+<script>
+  shaderWebBackground.shade({
+    shaders: {
+      Image: {
+        uniforms: {
+          iResolution: (gl, loc, ctx) =>
+            gl.uniform2f(loc, ctx.width, ctx.height),
+          iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
+        },
+      },
+    },
+  });
+</script>
