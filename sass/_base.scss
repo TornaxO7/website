@@ -49,6 +49,13 @@ main {
   -webkit-backdrop-filter: blur($strength);
 }
 
+.blur-mid {
+  $strength: 8px;
+
+  backdrop-filter: blur($strength);
+  -webkit-backdrop-filter: blur($strength);
+}
+
 .blur-strong {
   $strength: 50px;
 
