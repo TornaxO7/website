@@ -1,0 +1,119 @@
+<script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
+
+<script type="x-shader/x-fragment" id="Image">
+  precision highp float;
+
+  uniform vec2  iResolution;
+  uniform float iTime;
+
+  const vec3 NIGHT_BLUE = vec3(0.,7.,111.) / 255.;
+  const vec3 NIGHT_PURPLE = vec3(68.,0.,139.)/255.;
+  const vec3 NIGHT_MAGENTA = vec3(159.,69.,176.)/255.;
+  const vec3 NIGHT_LIGHT = vec3(255.,228.,242.)/255.;
+  const vec3 TURQUOISE = vec3(0., .7, .9);
+
+  const float PI = acos(-1.);
+
+  vec2 hash22(vec2 p)
+  {
+  	vec3 p3 = fract(vec3(p.xyx) * vec3(.1031, .1030, .0973));
+      p3 += dot(p3, p3.yzx+33.33);
+      return fract((p3.xx+p3.yz)*p3.zy);
+
+  }
+
+  mat2 rotate(float r) {
+      return mat2(
+          cos(r), -sin(r),
+          sin(r), cos(r)
+      );
+  }
+
+  float stars(vec2 uv, float size) {
+      vec2 id = floor(uv);
+      vec2 gv = fract(uv);
+
+      float time = iTime*.3;
+
+      float d = 1e4;
+      for (int x = -1; x < 2; ++x) {
+          for (int y = -1; y < 2; ++y) {
+              vec2 id_offset = vec2(float(x), float(y));
+
+              vec2 h = hash22(id + id_offset);
+              vec2 np = h + id_offset;
+              np.x += cos(time + h.x*8.) * .1;
+              np.y += sin(time + h.y*5.) * .1;
+
+              d = min(d, distance(np, gv));
+          }
+      }
+
+      float x = d;
+      float y = size / max(x, 1e-3) - .1;
+
+      return y;
+  }
+
+  vec3 star_layers(vec2 uv) {
+      vec3 col = vec3(0.);
+      for (int i = 1; i <= 3; ++i) {
+          float a = float(i) * 2.;
+
+          col = max(col, NIGHT_LIGHT * stars(rotate(a) * uv * a, .01));
+      }
+
+      return col;
+  }
+
+  float mountains(vec2 uv) {
+      float m = 0.;
+
+      const float FACTOR = 5.;
+
+      uv.y *= FACTOR;
+
+      float y = 0.;
+      y += 2.1 * sin(PI * .01 * uv.x);
+      y += 3.5 * sin(PI * .03 * uv.x);
+      y += 2.0 * sin(PI * .08 * uv.x);
+      y += 4.0 * sin(PI * .01 * uv.x);
+      y += 2.0 * sin(PI * .21 * uv.x);
+
+      m = smoothstep(-.1, .1, y - uv.y);
+
+      return m;
+  }
+
+    void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
+      vec2 uv = (2. * fragCoord.xy - iResolution.xy) / iResolution.y;
+      uv.y *= -1.;
+
+      vec3 col = vec3(0.);
+      col += NIGHT_BLUE * .2;
+      col += star_layers(3. * uv + iTime * .01);
+      col *= vec3(mountains(10. * (uv + vec2(iTime * .1, -.7))));
+
+      fragColor = vec4(col, 1.);
+  }
+
+
+  // -- End of Shadertoy code
+
+  void main() {
+    mainImage(gl_FragColor, gl_FragCoord.xy);
+  }
+</script>
+<script>
+  shaderWebBackground.shade({
+    shaders: {
+      Image: {
+        uniforms: {
+          iResolution: (gl, loc, ctx) =>
+            gl.uniform2f(loc, ctx.width, ctx.height),
+          iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
+        },
+      },
+    },
+  });
+</script>
