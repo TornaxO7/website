@@ -7,8 +7,8 @@
 
   justify-content: space-around;
   padding: 1em;
-  width: 50vh;
-  /* margin: */ 
+  max-width: 50vh;
+  width: 90%;
 
   .top-bar-left {
     @extend
