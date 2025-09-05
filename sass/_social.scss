@@ -1,0 +1,69 @@
+.social-links {
+  @extend
+    .column;
+
+  width: 100%;
+  height: 100vh;
+  margin: 4dvh;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+  /* background: blue; */
+
+
+  .social-link {
+    @extend
+      .rounded-corner;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    width: 7.5cm;
+
+    padding: .75rem 1rem;
+    border: .2rem solid $white;
+    text-decoration: none;
+
+    /* background: red; */
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    background: linear-gradient(to right, $selection-background, $blue);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-size: 100% 100%;
+    }
+  }
+
+  .social-link svg {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+  }
+
+  .mastodon-link {
+    color: $magenta;
+  }
+
+  .reddit-link {
+    color: $red;
+  }
+
+  .github-link {
+    color: $cyan;
+  }
+
+  .shadertoy-link {
+    color: $yellow;
+  }
+}

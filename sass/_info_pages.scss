@@ -8,15 +8,18 @@
 
   width: 100%;
   height: 100vh;
+
+  overflow-y: auto;
 }
 
 .info-page {
   @extend
     .column;
 
-  width: 20cm;
+  width: 80%;
   height: 100vh;
   margin: 4dvh;
+  /* background: red; */
 
   // let the content of the page start from the top
   justify-content: flex-start;
@@ -30,11 +33,12 @@
     .font-size-small;
 
   // distance to the top bar
-  margin-top: 3cm;
+  margin-top: 3em;
 
   /* background: red; */
   text-align: left;
   padding: 1em;
+  max-width: 100vh;
 
   img {
     width: max(min(5dvh, .7cm), .6cm);
@@ -46,4 +50,6 @@
   text-decoration-line: underline;
   text-align: center;
   flex-grow: 2;
+
+  /* width: 100%; */
 }

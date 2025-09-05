@@ -18,27 +18,13 @@ body {
       .glowing-border;
     min-height: 6cm;
     min-width: 5cm;
+    gap: .5rem;
+    padding: 2em;
 
-    max-width: 30dvh;
-    max-height: 35dvh;
+    /* max-width: 30dvh; */
+    /* max-height: 35dvh; */
 
     background-color: rgba($background, 0.6);
-
-    padding: 2em 1em;
-
-    .nav-bar {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      /* background: red; */
-
-      padding: 1vh;
-
-      .further-links {
-        color: $cyan;
-      }
-    }
 
     .card-title {
       @extend
@@ -46,29 +32,32 @@ body {
       color: $blue;
       text-decoration: underline;
       font-weight: bold;
-      /* background: blue; */
-      padding-bottom: 2vh;
     }
 
     .profile-picture {
       aspect-ratio: 2560 / 1600;
+      width: 250px;
+      height: auto;
     }
 
-    .social-accounts {
-      padding-top: 2dvh;
-      a {
-        .icon {
-          color: $cyan;
+    .further-links {
+      @extend
+        .rounded-corner;
 
-          /* width: 4vh; */
-          width: max(4dvh, .8cm);
-          height: 3em;
-          transition: 0.3s;
-        }
+      width: 80%;
+      padding: 0.2rem;
+      border: 0.2rem solid $blue;
+      text-decoration: none;
+      color: $cyan;
 
-        .icon:hover {
-          color: $green;
-        }
+      background: linear-gradient(to right, $blue, $selection-background);
+      background-size: 0% 100%;
+      background-repeat: no-repeat;
+      background-position: left;
+      transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-size: 100% 100%;
       }
     }
   } 

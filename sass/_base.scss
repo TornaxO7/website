@@ -31,7 +31,7 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  align-content: center;
+  align-items: center;
 }
 
 .row {
@@ -81,4 +81,16 @@ main {
   text-decoration: underline;
   font-weight: bold;
   color: $selection-foreground;
+}
+
+.dividing-line {
+  @extend
+    .rounded-corner;
+
+  width: 80%;
+  height: 2.5px;
+  margin: 0.5rem auto;
+  background: $blue;
+  flex: 0 0 auto;
+  align-self: center;
 }

@@ -7,20 +7,6 @@
 {% block content %}
 <div class="container">
   <div class="profile-card column blur-light">
-    <div class="nav-bar">
-      <a
-        href="{{ get_url(path='@/about/_index.md') }}"
-        class="further-links font-size-medium"
-        >About</a
-      >
-      <a
-        href="{{ get_url(path='@/blog/_index.md') }}"
-        class="further-links font-size-medium"
-      >
-        Blog
-      </a>
-    </div>
-
     <div class="card-title font-size-big">{{ config.author }}</div>
 
     <img
@@ -29,23 +15,43 @@
       alt="me"
     />
 
-    <div class="social-accounts row">
-      <a href="https://github.com/TornaxO7" title="Github">
-        {% include "icons/github.html" %}
-      </a>
+    <div class="dividing-line"></div>
 
-      <a href="https://www.reddit.com/user/TornaxO7/" title="Reddit">
-        {% include "icons/reddit.html" %}
-      </a>
+    <a
+      href="{{ get_url(path='@/about/_index.md') }}"
+      class="further-links font-size-medium"
+      >About</a
+    >
 
-      <a href="https://mastodon.social/@TornaxO7" title="Mastodon">
-        {% include "icons/mastodon.html" %}
-      </a>
+    <a
+      href="{{ get_url(path='@/blog/_index.md') }}"
+      class="further-links font-size-medium"
+      >Blog</a
+    >
 
-      <a href="mailto:tornax@pm.me" title="Mail">
-        {% include "icons/mail.html" %}
-      </a>
-    </div>
+    <a
+      href="{{ get_url(path='@/social/_index.md') }}"
+      class="further-links font-size-medium"
+      >Social</a
+    >
+
+    <!-- <div class="social-accounts row"> -->
+    <!-- <a href="https://github.com/TornaxO7" title="Github"> -->
+    <!-- {% include "icons/github.html" %} -->
+    <!-- </a> -->
+
+    <!-- <a href="https://www.reddit.com/user/TornaxO7/" title="Reddit"> -->
+    <!-- {% include "icons/reddit.html" %} -->
+    <!-- </a> -->
+
+    <!-- <a href="https://mastodon.social/@TornaxO7" title="Mastodon"> -->
+    <!-- {% include "icons/mastodon.html" %} -->
+    <!-- </a> -->
+
+    <!-- <a href="mailto:tornax@pm.me" title="Mail"> -->
+    <!-- {% include "icons/mail.html" %} -->
+    <!-- </a> -->
+    <!-- </div> -->
   </div>
   {% endblock content %}
 </div>
