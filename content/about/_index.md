@@ -21,7 +21,7 @@ I do most of my stuff with the rust programming language since it's the language
 
 <!-- links -->
 
-[shadertoy]: https://www.shadertoy.com/profile/?show=shaders
+[shadertoy]: https://www.shadertoy.com/user/TornaxO7/sort=newest
 [vibe]: https://github.com/TornaxO7/vibe
 [PornOS]: https://github.com/TornaxO7/PornOS
 [RIP-8]: https://github.com/TornaxO7/RIP-8
