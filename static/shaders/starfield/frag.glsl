@@ -8,6 +8,8 @@ uniform vec2 iResolution;
 
 out vec4 fragColor;
 
+const float PI = acos(-1.);
+
 float drawCircle(vec2 uv, vec2 center, float radius) {
     return smoothstep(radius, radius - .1, length(uv - center));
 }
@@ -53,7 +55,7 @@ void main()
         m += drawLayer(lv, time) * fade;
     }
 
-    vec3 base_color = sin(time * 5. * vec3(1.5, 3., 7.)) * .25 + .75;
+    vec3 base_color = sin(time * 5. * vec3(1.5, 3., 7.) + iSeed * PI) * .25 + .75;
     vec3 col = base_color * m;
 
     fragColor = vec4(col, 1.);

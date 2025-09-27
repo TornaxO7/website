@@ -31,7 +31,7 @@ vec3 cell(vec2 id, vec2 gv) {
     // presence
     float m = (sin(iTime + 8. * hash) * .4 + .6) * glow;
 
-    vec3 col = sin(2. * vec3(1., 2., 3.) + hash + iTime * .1) * .4 + .6;
+    vec3 col = sin(2. * vec3(1., 2., 3.) + hash + iSeed * 100. + iTime * .1) * .4 + .6;
 
     return col * m;
 }
@@ -46,7 +46,7 @@ vec3 grid(vec2 uv) {
 void main() {
     vec2 uv = (2. * gl_FragCoord.xy - iResolution.xy) / iResolution.y;
 
-    float time = iTime * .005;
+    float time = iTime * .005 + iSeed * 100.;
     uv += 5. * vec2(cos(time), sin(time));
 
     vec3 col = grid(uv * 5.);

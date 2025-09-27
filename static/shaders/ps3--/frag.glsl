@@ -17,10 +17,10 @@ float wave(vec2 uv, vec4 amps, vec4 freqs, vec4 offset) {
 
     float x = uv.x;
     float y = 0.;
-    y += amps.x * sin(freqs.x * x + time + offset.x);
-    y += amps.y * sin(freqs.y * x + time + offset.y);
-    y += amps.z * sin(freqs.z * x + time + offset.z);
-    y += amps.w * sin(freqs.w * x + time + offset.w);
+    y += amps.x * sin(freqs.x * x + iSeed * 100. + time + offset.x);
+    y += amps.y * sin(freqs.y * x + iSeed * 100. + time + offset.y);
+    y += amps.z * sin(freqs.z * x + iSeed * 100. + time + offset.z);
+    y += amps.w * sin(freqs.w * x + iSeed * 100. + time + offset.w);
 
     float blur = .025;
 
