@@ -8,9 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{{ get_url(path='/style.css')}} " />
 
+    <!-- shader background canvas -->
+    <style>
+      #shader-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -9999;
+      }
+    </style>
+
     {% block header %} {% endblock header %}
   </head>
   <body>
+    <canvas id="shader-background"></canvas>
+
     <main class="main">{% block content %} {% endblock content %}</main>
   </body>
 </html>
