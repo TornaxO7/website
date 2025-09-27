@@ -4,35 +4,35 @@
 {% block content %}
 <script type="module" src="/shaders/starfield/code.js"></script>
 
-<!-- <div class="container"> -->
-<!-- <div class="profile-card column blur-light"> -->
-<!-- <div class="card-title font-size-big">{{ config.author }}</div> -->
+<div class="container">
+  <div class="profile-card column blur-light">
+    <div class="card-title font-size-big">{{ config.author }}</div>
 
-<!-- <img -->
-<!-- class="profile-picture" -->
-<!-- src="/{{ config.extra.profile_picture }}" -->
-<!-- alt="me" -->
-<!-- /> -->
+    <img
+      class="profile-picture"
+      src="/{{ config.extra.profile_picture }}"
+      alt="me"
+    />
 
-<!-- <div class="dividing-line"></div> -->
+    <div class="dividing-line"></div>
 
-<!-- <a -->
-<!-- href="{{ get_url(path='@/about/_index.md') }}" -->
-<!-- class="further-links font-size-medium" -->
-<!-- >About</a -->
-<!-- > -->
+    <a
+      href="{{ get_url(path='@/about/_index.md') }}"
+      class="further-links font-size-medium"
+      >About</a
+    >
 
-<!-- <a -->
-<!-- href="{{ get_url(path='@/blog/_index.md') }}" -->
-<!-- class="further-links font-size-medium" -->
-<!-- >Blog</a -->
-<!-- > -->
+    <a
+      href="{{ get_url(path='@/blog/_index.md') }}"
+      class="further-links font-size-medium"
+      >Blog</a
+    >
 
-<!-- <a -->
-<!-- href="{{ get_url(path='@/social/_index.md') }}" -->
-<!-- class="further-links font-size-medium" -->
-<!-- >Social</a -->
-<!-- > -->
-<!-- </div> -->
-<!-- </div> -->
+    <a
+      href="{{ get_url(path='@/social/_index.md') }}"
+      class="further-links font-size-medium"
+      >Social</a
+    >
+  </div>
+</div>
 {% endblock content %}
