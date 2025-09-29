@@ -29,7 +29,7 @@ vec3 cell(vec2 id, vec2 gv) {
     float glow = .1 / (max(.2, x) - .1) - .3;
 
     // presence
-    float m = (sin(iTime + 8. * hash) * .4 + .6) * glow;
+    float m = (sin(iTime*.5 + iSeed * 100. + 8. * hash) * .4 + .6) * glow;
 
     vec3 col = sin(2. * vec3(1., 2., 3.) + hash + iSeed * 100. + iTime * .1) * .4 + .6;
 

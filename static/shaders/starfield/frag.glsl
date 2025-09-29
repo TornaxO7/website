@@ -8,56 +8,50 @@ uniform vec2 iResolution;
 
 out vec4 fragColor;
 
-const float PI = acos(-1.);
-
-float drawCircle(vec2 uv, vec2 center, float radius) {
-    return smoothstep(radius, radius - .1, length(uv - center));
-}
-
-vec2 getInnerPoint(vec2 id) {
-    vec2 point = id + .4 * sin(iTime);
-    return point + .5;
-}
-
-float drawLayer(vec2 lv, float time) {
-    float m = 0.;
-
-    vec2 id = floor(lv);
-    m += drawCircle(lv, getInnerPoint(id), .1);
-
-    return m;
-}
-
-mat2 getRotationMatrix(float time) {
-    return mat2(cos(time), -sin(time), sin(time), cos(time));
-}
-
-void main()
+vec2 hash22(vec2 p)
 {
-    vec2 uv = gl_FragCoord.xy / iResolution.xy;
+	vec3 p3 = vec3(p.xyx) * vec3(18., 2.198, 11.68) * iSeed;
+    return fract((p3.xx+p3.yz)*p3.zy);
+}
 
-    float m = smoothstep(.9, -1.5, length(uv.y));
-    float time = iTime * .1;
+mat2x2 rotate(float r) {
+    return mat2x2(cos(r), sin(r), -sin(r), cos(r));
+}
 
-    uv -= .5;
-    uv.x *= iResolution.x / iResolution.y;
-    uv *= 20.;
+float star(vec2 uv) {
+    return smoothstep(.1, .0, length(uv));
+}
 
-    const float amount_layers = 6.;
-    for (float i = 0.; i < amount_layers; i += 1.) {
-        float z = fract(2. * (i / (amount_layers * 2.)) - time);
+float starLayer(vec2 uv) {
+    float time = iTime;
+    vec2 id = floor(uv);
+    vec2 gv = fract(uv) - .5;
 
-        float fade_in = smoothstep(0., .2, z);
-        float fade_out = smoothstep(1., .8, z);
-        float fade = fade_in * fade_out;
+    vec2 h = hash22(id);
+    gv += vec2(cos(h.x * time + id.y), sin(h.y * time + id.x)) * .3;
+    return star(gv);
+}
 
-        vec2 lv = getRotationMatrix(z * 3.) * uv * z;
-        m += drawLayer(lv, time) * fade;
+void main() {
+    float time = iTime;
+
+    vec3 base_color = cos(vec3(3., 5., 10.) + time) * .25 + .75;
+    vec3 col = base_color * smoothstep(.0, 2., 1. - gl_FragCoord.y / iResolution.y);
+    vec2 uv = (2. * gl_FragCoord.xy - iResolution.xy) / iResolution.y;
+
+    const int amount_layers = 6;
+    const float layer_distance = 2.;
+    for (int i = 0; i < amount_layers; ++i) {
+        float fi = float(i);
+        float z = fi - fract(time / layer_distance);
+
+        float zoom = z * layer_distance;
+        float fade_in = smoothstep(.0, layer_distance + 1., zoom);
+        float fade_out = smoothstep(float(amount_layers - 1) * layer_distance, float(amount_layers - 1) * layer_distance * .8, zoom);
+
+        float layer = starLayer(rotate(z*.4) * uv * zoom);
+        col += base_color * layer * fade_in * fade_out;
     }
-
-    vec3 base_color = sin(time * 5. * vec3(1.5, 3., 7.) + iSeed * PI) * .25 + .75;
-    vec3 col = base_color * m;
 
     fragColor = vec4(col, 1.);
 }
-
