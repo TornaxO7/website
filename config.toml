@@ -124,4 +124,4 @@ include_content = true
 index_format = "elasticlunr_javascript"
 
 [extra]
-profile_picture = "pikachu.jpg"
+profile_picture = "pikachu.webp"
