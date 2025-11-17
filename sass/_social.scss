@@ -2,16 +2,13 @@
   @extend
     .column;
 
-  width: 100%;
-  height: 100vh;
-  margin: 4dvh;
+  margin: $margin;
 
   justify-content: center;
   align-items: center;
 
-  gap: 1rem;
+  gap: $gap;
   /* background: blue; */
-
 
   .social-link {
     @extend
@@ -19,12 +16,12 @@
 
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: $gap;
 
     width: 7.5cm;
 
-    padding: .75rem 1rem;
-    border: .2rem solid $white;
+    padding: .25cm .5cm;
+    border: .1cm solid $white;
     text-decoration: none;
 
     /* background: red; */
@@ -46,8 +43,8 @@
   }
 
   .social-link svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1cm;
+    height: 1cm;
     flex-shrink: 0;
   }
 

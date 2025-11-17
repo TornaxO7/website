@@ -1,65 +1,50 @@
-body {
-  margin: 0;
-}
+.profile-card {
+  @extend
+    .rounded-corner,
+    .glowing-border;
 
-.container {
-  width: 100%;
-  height: 100dvh;
+  gap: $gap;
+  padding: 1cm;
 
-  // center the card
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba($background, 0.6);
+  /* background: $red; */
 
-  .profile-card {
+  .card-title {
     @extend
-      .rounded-corner,
-      .glowing-border;
-    min-height: 6cm;
-    min-width: 5cm;
-    gap: .5rem;
-    padding: 2em;
+      .title;
 
-    /* max-width: 30dvh; */
-    /* max-height: 35dvh; */
+    color: $foreground;
+    text-decoration: underline;
+    font-weight: bold;
+  }
 
-    background-color: rgba($background, 0.6);
+  .profile-picture {
+    aspect-ratio: 2560 / 1600;
+    width: 250px;
+    height: auto;
+  }
 
-    .card-title {
-      @extend
-        .title;
-      color: $blue;
-      text-decoration: underline;
-      font-weight: bold;
+  .further-links {
+    @extend
+      .rounded-corner;
+
+    width: 80%;
+    padding: .1cm;
+    border: .1cm solid $blue;
+    text-decoration: none;
+    color: $cyan;
+
+    background: linear-gradient(to right, $blue, $selection-background);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+    text-align: center;
+
+    &:hover {
+      background-size: 100% 100%;
     }
-
-    .profile-picture {
-      aspect-ratio: 2560 / 1600;
-      width: 250px;
-      height: auto;
-    }
-
-    .further-links {
-      @extend
-        .rounded-corner;
-
-      width: 80%;
-      padding: 0.2rem;
-      border: 0.2rem solid $blue;
-      text-decoration: none;
-      color: $cyan;
-
-      background: linear-gradient(to right, $blue, $selection-background);
-      background-size: 0% 100%;
-      background-repeat: no-repeat;
-      background-position: left;
-      transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
-
-      &:hover {
-        background-size: 100% 100%;
-      }
-    }
-  } 
-}
+  }
+} 
 

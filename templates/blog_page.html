@@ -4,19 +4,17 @@
 {% block content %}
 <script type="module" src="/shaders/commit-history/code.js"></script>
 
-<div class="info-page-container">
-  <div class="info-page">
-    {% include "top_bar.html" %}
+<div class="info-page">
+  {% include "top_bar.html" %}
 
-    <!-- Actual content -->
-    <div class="info-block blur-mid">{{ section.content | safe }}</div>
+  <!-- Actual content -->
+  <div class="info-block blur-mid">{{ section.content | safe }}</div>
 
-    <ul>
-      {% for page in section.pages%}
-      <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
+  <ul>
+    {% for page in section.pages%}
+    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
 </div>
 
 {% endblock content %}

@@ -6,18 +6,23 @@
     .glowing-border;
 
   justify-content: space-around;
-  padding: 1em;
-  max-width: 50vh;
-  width: 90%;
+  padding: .5cm;
+  max-width: $max-width;
+  width: 80%;
+  margin: $margin;
+  gap: .1cm;
 
   .top-bar-left {
     @extend
-      .row;
+      .column;
 
     flex-grow: 1;
 
+    /* background: red; */
+
     .emoji {
-      width: 1cm;
+      width: 3em;
+      height: 3em;
     };
   }
 

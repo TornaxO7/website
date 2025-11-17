@@ -8,29 +8,30 @@ a {
   color: $red;
 }
 
-main {
+body {
   margin: 0;
-  width: 100%;
-  min-height: 100dvh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .font-size-big {
-  font-size: max(min(5dvh, .7cm), .6cm);
+  font-size: 2.0rem;
 }
 
 .font-size-medium {
-  font-size: max(min(3dvh, .6cm), .5cm);
+  font-size: 1.5rem;
 }
 
 .font-size-small {
-  font-size: max(min(2dvh, .5cm), .4cm);
+  font-size: 1.0rem;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   align-items: center;
 }
 
@@ -71,7 +72,7 @@ main {
 }
 
 .rounded-corner {
-  border-radius: 2em;
+  border-radius: .5cm;
 }
 
 .title {
@@ -89,7 +90,7 @@ main {
 
   width: 80%;
   height: 2.5px;
-  margin: 0.5rem auto;
+  /* margin: 0.5rem auto; */
   background: $blue;
   flex: 0 0 auto;
   align-self: center;
