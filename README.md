@@ -8,9 +8,11 @@ Shoutout to:
 - [zola] for creating this
 - [ntun (zola theme)] which I took inspiration from for the format
 - [tokyonight.nvim] so that I can include some colors of it
+- [tabler.io] for the icons
 
 [zola]: https://www.getzola.org/
 [shader-web-background]: https://github.com/xemantic/shader-web-background?tab=readme-ov-file
 [shadertoy]: https://www.shadertoy.com/
 [ntun (zola theme)]: https://www.getzola.org/themes/ntun/
 [tokyonight.nvim]: https://github.com/folke/tokyonight.nvim
+[tabler.io]: https://tabler.io/icons/

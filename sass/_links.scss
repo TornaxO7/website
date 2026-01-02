@@ -26,7 +26,7 @@
 
     /* background: red; */
 
-    img {
+    img, svg {
       width: 2rem;
       height: 2rem;
     }
@@ -62,5 +62,9 @@
 
   .shadertoy-link {
     color: $yellow;
+  }
+
+  .linkedin-link {
+    color: $blue;
   }
 }
