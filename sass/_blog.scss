@@ -1,0 +1,60 @@
+// Info pages are pages which contain extra information like the
+// about page and blog.
+
+.blog-page {
+  @extend
+    .page;
+
+  // let the content of the page start from the top
+  justify-content: flex-start;
+
+  .blog-entry {
+    @extend
+      .blur-mid,
+      .rounded-corner,
+      .glowing-border;
+
+    text-decoration: none;
+
+    /* background: red; */
+    width: 100%;
+    padding: 1rem;
+
+    .blog-entry-title {
+      @extend
+        .title,
+        .row,
+        .font-size-medium;
+
+      justify-content: start;
+    }
+
+    .blog-entry-date {
+      @extend
+        .row,
+        .font-size-small;
+
+      color: $foreground;
+      padding-top: .5rem;
+      justify-content: start;
+    }
+
+    .blog-entry-hr {
+      color: $light_black;
+    }
+
+    .blog-entry-description {
+      color: $foreground;
+    }
+
+    background: linear-gradient(to right, $black, $selection-background);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-size: 100% 100%;
+    }
+  }
+}

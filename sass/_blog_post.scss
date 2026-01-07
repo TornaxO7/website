@@ -1,0 +1,15 @@
+.blog-post-page {
+  @extend
+    .page;
+
+  .blog-post-content {
+    @extend
+      .rounded-corner,
+      .glowing-border,
+      .blur-strong;
+      
+    text-align: left;
+    padding: 1rem;
+    width: 100%;
+  }
+}

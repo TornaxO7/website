@@ -1,70 +1,76 @@
-.links {
+.link-page {
   @extend
-    .column;
+    .page;
 
-  margin: $margin;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: $gap;
-  /* background: blue; */
-
-  .link {
+  .links {
     @extend
-      .rounded-corner;
+      .column;
 
-    display: flex;
+    margin: $margin;
+
+    justify-content: center;
     align-items: center;
+
     gap: $gap;
+    /* background: blue; */
 
-    width: 7.5cm;
+    .link {
+      @extend
+        .rounded-corner;
 
-    padding: .25cm .5cm;
-    border: .1cm solid $white;
-    text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: $gap;
 
-    /* background: red; */
+      width: 7.5cm;
 
-    img, svg {
-      width: 2rem;
-      height: 2rem;
+      padding: .25cm .5cm;
+      border: .1cm solid $white;
+      text-decoration: none;
+
+      /* background: red; */
+
+      img, svg {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      background: linear-gradient(to right, $selection-background, $blue);
+      background-size: 0% 100%;
+      background-repeat: no-repeat;
+      background-position: left;
+      transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-size: 100% 100%;
+      }
     }
 
-    background: linear-gradient(to right, $selection-background, $blue);
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    background-position: left;
-    transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
-
-    &:hover {
-      background-size: 100% 100%;
+    .social-link svg {
+      width: 1cm;
+      height: 1cm;
+      flex-shrink: 0;
     }
-  }
 
-  .social-link svg {
-    width: 1cm;
-    height: 1cm;
-    flex-shrink: 0;
-  }
+    .mastodon-link {
+      color: $magenta;
+    }
 
-  .mastodon-link {
-    color: $magenta;
-  }
+    .reddit-link {
+      color: $red;
+    }
 
-  .reddit-link {
-    color: $red;
-  }
+    .github-link {
+      color: $cyan;
+    }
 
-  .github-link {
-    color: $cyan;
-  }
+    .shadertoy-link {
+      color: $yellow;
+    }
 
-  .shadertoy-link {
-    color: $yellow;
-  }
-
-  .linkedin-link {
-    color: $blue;
+    .linkedin-link {
+      color: $blue;
+    }
   }
 }
+

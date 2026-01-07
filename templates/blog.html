@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+<!-- Content -->
+{% block content %}
+<script type="module" src="/shaders/commit-history/code.js"></script>
+
+<div class="blog-page">
+  {% include "top_bar.html" %}
+
+  <!-- <div class="blog-description blur-mid">{{ section.content | safe }}</div> -->
+
+  {% for page in section.pages %}
+  <a href="{{ page.permalink | safe }}" class="blog-entry">
+    <div class="blog-entry-title">{{ page.title }}</div>
+    <div class="blog-entry-date">{{ page.date }}</div>
+    <hr class="blog-entry-hr" />
+    <div class="blog-entry-description">{{ page.description }}</div>
+  </a>
+  {% endfor %}
+</div>
+
+{% endblock content %}

@@ -95,3 +95,45 @@ body {
   flex: 0 0 auto;
   align-self: center;
 }
+
+.page {
+  @extend
+    .column;
+
+  width: 80%;
+  max-width: $max-width;
+  height: 100vh;
+  gap: .3cm;
+
+  // let the content of the page start from the top
+  justify-content: flex-start;
+}
+
+// Code blocks in markdown files
+/* Block code (``` ... ```) */
+pre {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  line-height: 1.2;
+  font-size: 1rem;
+
+  border: 2px solid $white;
+  margin: 1.25rem 0;
+}
+
+/* Inline code (`like this`) */
+code {
+  background: $light_black;
+  color: $foreground;
+  padding: .2rem .3rem;
+  border-radius: 6px;
+}
+
+/* Prevent inline styles from affecting block code */
+pre code {
+  background: none;
+  padding: 0;
+  border-radius: 1cm;
+}
+

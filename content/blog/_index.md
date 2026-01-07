@@ -1,8 +1,6 @@
 +++
 title = "TornaxO7's blog"
 sort_by = "date"
-template = "blog_page.html"
+template = "blog.html"
 page_template = "blog_post_page.html"
 +++
-
-Nothing here yet :(

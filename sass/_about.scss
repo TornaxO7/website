@@ -1,0 +1,38 @@
+// Info pages are pages which contain extra information like the
+// about page and blog.
+
+.about-page {
+  @extend
+    .page;
+
+  .about-block {
+    @extend
+      .blur-light,
+      .rounded-corner,
+      .glowing-border,
+      .font-size-small;
+
+    // distance to the top bar
+    /* margin-top: 3em; */
+
+    /* background: red; */
+    text-align: left;
+    padding: 1em;
+    width: 100%;
+
+    img {
+      width: max(min(5dvh, .7cm), .6cm);
+    }
+  }
+}
+
+
+
+.title {
+  color: $blue;
+  text-decoration-line: underline;
+  text-align: center;
+  flex-grow: 2;
+
+  /* width: 100%; */
+}
