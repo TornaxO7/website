@@ -6,7 +6,7 @@ description = "Simple command to copy+paste to get the id of a github user to cr
 
 So basically if you wanted to add someone as a [co-author], you'd need to create your commit-message as follows (I recommend to stick to the [commit conventions]):
 
-```COMMIT_EDITMSG,linenos
+```COMMIT_EDITMSG
 <commit message>
 
 Co-authored-by: NAME <email> # NOTE: (`NAME` is not the username!)

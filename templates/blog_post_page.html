@@ -4,6 +4,66 @@
 {% block content %}
 <script type="module" src="/shaders/chilly-waves/code.js"></script>
 
+<!-- To be able to copy the codeblocks -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".blog-post-content pre").forEach((pre) => {
+      const code = pre.querySelector("code");
+      if (!code) return;
+
+      pre.style.position = "relative";
+
+      const copy_button = document.createElement("button");
+      copy_button.className = "copy-button";
+      copy_button.type = "button";
+      copy_button.innerText = "⧉";
+
+      const tooltip = document.createElement("span");
+      tooltip.className = "copy-tooltip";
+      tooltip.innerText = "Copied";
+
+      pre.appendChild(copy_button);
+      pre.appendChild(tooltip);
+
+      const copy_to_clipboard = async () => {
+        try {
+          await navigator.clipboard.writeText(
+            code.textContent.substring(0, code.textContent.length - 1),
+          );
+          tooltip.innerText = "Copied";
+        } catch (err) {
+          tooltip.innerText = "Can't copy to clipboard";
+          console.log(err);
+        }
+
+        tooltip.classList.add("show");
+        setTimeout(() => tooltip.classList.remove("show"), 1200);
+      };
+
+      copy_button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        copy_to_clipboard();
+      });
+
+      code.addEventListener("click", (e) => {
+        e.stopPropagation();
+        copy_to_clipboard();
+      });
+    });
+
+    document.querySelectorAll(".blog-post-content code").forEach((code) => {
+      if (code.closest("pre")) return;
+
+      code.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navigator.clipboard.writeText(
+          code.textContent.substring(0, code.textContent.length - 1),
+        );
+      });
+    });
+  });
+</script>
+
 <div class="blog-post-page">
   <div class="top-bar">
     <button onclick="history.back()" class="top-bar-left">

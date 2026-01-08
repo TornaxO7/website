@@ -1,15 +1,79 @@
 .blog-post-page {
-  @extend
-    .page;
+  @extend .page;
 
   .blog-post-content {
     @extend
       .rounded-corner,
       .glowing-border,
       .blur-strong;
-      
+
     text-align: left;
     padding: 1rem;
     width: 100%;
+
+    pre {
+      position: relative;
+
+      &:hover .copy-button {
+        opacity: 1;
+      }
+    }
   }
 }
+
+code {
+  cursor: pointer;
+}
+
+code:hover {
+  background: $selection-background;
+  color: $selection-foreground;
+}
+
+.copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: $selection-foreground;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    background: $selection-background;
+    color: $selection-foreground;
+  }
+}
+
+.copy-tooltip {
+  position: absolute;
+  top: 10px;
+  right: 46px;
+
+  background: $selection-background;
+  color: $selection-foreground;
+  font-size: 12px;
+
+  padding: 3px 8px;
+  border-radius: 6px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
