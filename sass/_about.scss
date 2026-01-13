@@ -38,6 +38,7 @@
 
       .logo:hover {
         background: $selection-background;
+        border-color: $selection-foreground;
       }
     }
 
@@ -64,6 +65,3 @@
   }
 }
 
-.most {
-  border-color: $green;
-}
