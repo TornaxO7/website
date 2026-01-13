@@ -1,5 +1,5 @@
 +++
-title = "NixOS and the nix language"
+title = "NixOS and nix"
 [extra]
 homepage = "https://nixos.org/"
 logo_url = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nixos/nixos-original.svg"
