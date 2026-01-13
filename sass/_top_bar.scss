@@ -6,7 +6,6 @@
     .glowing-border;
 
   justify-content: space-around;
-  padding: .5cm;
   max-width: $max-width;
   width: 80%;
   margin: $margin;
@@ -20,8 +19,6 @@
 
     background: none;
     border: none;
-    margin: 0;
-    padding: 0;
 
     .emoji {
       width: 3em;

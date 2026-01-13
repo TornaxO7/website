@@ -18,7 +18,7 @@
 
     /* background: red; */
     width: 100%;
-    padding: 1rem;
+    padding: $padding;
 
     .blog-entry-title {
       @extend
@@ -26,6 +26,7 @@
         .row,
         .font-size-medium;
 
+      padding: 0;
       justify-content: start;
     }
 

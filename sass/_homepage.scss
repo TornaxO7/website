@@ -7,11 +7,12 @@
   padding: 1cm;
 
   background-color: rgba($background, 0.6);
-  /* background: $red; */
 
   .card-title {
     @extend
       .title;
+
+    padding: 0;
 
     color: $foreground;
     text-decoration: underline;

@@ -5,6 +5,13 @@
   @extend
     .page;
 
+  .languages {
+    @extend
+      .blur-light,
+      .rounded-corner,
+      .glowing-border;
+  }
+
   .about-block {
     @extend
       .blur-light,
@@ -17,7 +24,7 @@
 
     /* background: red; */
     text-align: left;
-    padding: 1em;
+    padding: $padding;
     width: 100%;
 
     img {
