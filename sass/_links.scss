@@ -16,6 +16,7 @@
 
     .link {
       @extend
+        .font-size-medium,
         .rounded-corner;
 
       display: flex;
@@ -45,30 +46,34 @@
       }
     }
 
-    .social-link svg {
+    .social svg {
       width: 1cm;
       height: 1cm;
       flex-shrink: 0;
     }
 
-    .mastodon-link {
+    .mastodon {
       color: $magenta;
     }
 
-    .reddit-link {
+    .reddit {
       color: $red;
     }
 
-    .github-link {
+    .github {
       color: $cyan;
     }
 
-    .shadertoy-link {
+    .shadertoy {
       color: $yellow;
     }
 
-    .linkedin-link {
+    .linkedin {
       color: $blue;
+    }
+
+    .stackoverflow {
+      color: orange;
     }
   }
 }
