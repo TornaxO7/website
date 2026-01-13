@@ -1,0 +1,19 @@
+.homepage {
+  color: $cyan;
+}
+
+.about-tool-page {
+  @extend
+    .page;
+
+  .block {
+    @extend
+      .font-size-small,
+      .blur-light;
+  }
+
+  img {
+    width: max(min(5dvh, .7cm), 1cm);
+  }
+}
+

@@ -2,12 +2,27 @@
 
 <!-- Content -->
 {% block content %}
-<script type="module" src="/shaders/night-sky/code.js"></script>
+<script type="module" src="/shaders/wavey-spheres/code.js"></script>
 
 <div class="about-page">
   {% include "top_bar.html" %}
 
-  <div class="about-block">{{ section.content | safe }}</div>
-</div>
+  <div class="tools">
+    <div class="title">Worked with</div>
+    <div class="description">
+      Here you can find some tools I've been working with. You can click on them
+      and read a little bit about what I've done with them or just some comments
+      about them.
+    </div>
 
-{% endblock content %}
+    <div class="row">
+      {% for page in section.pages %}
+      <a href="{{ page.permalink | safe }}" class="logo">
+        <img width="75px" height="75px" src="{{ page.extra.logo_url }}" />
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% endblock content %}
+</div>

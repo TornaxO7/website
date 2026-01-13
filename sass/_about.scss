@@ -1,15 +1,46 @@
-// Info pages are pages which contain extra information like the
-// about page and blog.
-
 .about-page {
   @extend
     .page;
 
-  .languages {
+  .tools {
     @extend
-      .blur-light,
+      .blur-mid,
       .rounded-corner,
+      .column,
       .glowing-border;
+
+    width: 100%;
+    padding: $padding;
+
+    .description {
+      @extend
+        .border,
+        .font-size-small,
+        .rounded-corner;
+
+      padding: $padding;
+    }
+
+    .row {
+      padding: $padding;
+      gap: 1cm;
+
+      .logo {
+        @extend
+          .border,
+          .rounded-corner;
+
+        align-items: center;
+
+        padding: .3cm;
+        background: rgba($background, 0.6);
+      }
+
+      .logo:hover {
+        background: $selection-background;
+      }
+    }
+
   }
 
   .about-block {
@@ -33,13 +64,6 @@
   }
 }
 
-
-
-.title {
-  color: $blue;
-  text-decoration-line: underline;
-  text-align: center;
-  flex-grow: 2;
-
-  /* width: 100%; */
+.most {
+  border-color: $green;
 }
