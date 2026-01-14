@@ -66,7 +66,7 @@ vec4 hash41(float p)
 }
 
 float get_height(vec2 id, float layer) {
-    float t = iTime*.8;
+    float t = iTime*.8 + iSeed*500.;
 
     vec4 h = hash41(layer)*1000.;
 
@@ -101,7 +101,7 @@ float map(vec3 p) {
 }
 
 void main() {
-    float t = iTime*.5 + iSeed;
+    float t = iTime*.5 + iSeed*500.;
     vec3 col = vec3(0.);
     vec2 uv = (2. * gl_FragCoord.xy - iResolution.xy) / iResolution.y;
 
