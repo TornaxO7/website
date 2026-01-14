@@ -33,7 +33,7 @@ float starLayer(vec2 uv) {
 }
 
 void main() {
-    float time = iTime;
+    float time = iTime + iSeed*500.;
 
     vec3 base_color = cos(vec3(3., 5., 10.) + time) * .25 + .75;
     vec3 col = base_color * smoothstep(.0, 2., 1. - gl_FragCoord.y / iResolution.y);
