@@ -2,7 +2,10 @@
 
 <!-- Content -->
 {% block content %}
-<script type="module" src="/shaders/wavey-spheres/code.js"></script>
+<script
+  src="/shaders/loader.js"
+  data-fragment-url="/shaders/wavey-spheres.glsl"
+></script>
 
 <div class="about-page">
   {% include "top_bar.html" %}

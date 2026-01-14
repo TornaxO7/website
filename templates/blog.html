@@ -2,7 +2,10 @@
 
 <!-- Content -->
 {% block content %}
-<script type="module" src="/shaders/commit-history/code.js"></script>
+<script
+  src="/shaders/loader.js"
+  data-fragment-url="/shaders/commit-history.glsl"
+></script>
 
 <div class="blog-page">
   {% include "top_bar.html" %}

@@ -72,7 +72,7 @@ function createShaderProgram(gl, vsSource, fsSource) {
   return shaderProgram;
 }
 
-export async function loadShader(url) {
+async function loadShader(url) {
   const canvas = document.querySelector("#shader-background");
   const gl = canvas.getContext("webgl2");
   if (!gl) {
@@ -133,3 +133,8 @@ export async function loadShader(url) {
 
   requestAnimationFrame(render);
 }
+
+const args = document.currentScript.dataset;
+const url = args.fragmentUrl;
+
+loadShader(url)
