@@ -6,35 +6,21 @@
     .glowing-border;
 
   justify-content: space-around;
-  max-width: $max-width;
   width: 80%;
   margin: $margin;
-  gap: .1cm;
 
-  .top-bar-left {
+  .top-bar-left, .top-bar-right {
     @extend
       .column;
 
-    flex-grow: 1;
-
-    background: none;
-    border: none;
-
-    .emoji {
-      width: 3em;
-      height: 3em;
-    };
+    flex: 11%;
+    color: $cyan;
   }
 
   .top-bar-center {
     @extend
-      .title,
-      .column;
+      .title;
 
-    flex-grow: 2;
+    flex: 70%;
   };
-
-  .top-bar-right {
-    flex-grow: 1;
-  }
 }

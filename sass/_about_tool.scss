@@ -10,10 +10,10 @@
     @extend
       .font-size-small,
       .blur-light;
-  }
 
-  img {
-    width: max(min(5dvh, .7cm), 1cm);
+    img {
+      width: max(min(5dvh, .7cm), 1cm);
+    }
   }
 }
 
