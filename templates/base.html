@@ -8,6 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{{ get_url(path='/style.css')}} " />
 
+    <!-- sizes from: https://numberchomper.com/en/favicon-generator -->
+    {% set sizes = [16, 24, 32, 48, 64, 152, 167, 180, 192] %} {% for size in
+    sizes %} {% set favicon = resize_image(path="/pikachu.webp", width=size,
+    height=size) %}
+    <link rel="icon" type="image/png" href="{{ favicon.url | safe }}" />
+    {% endfor %}
+
     <!-- shader background canvas -->
     <style>
       #shader-background {
