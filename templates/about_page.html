@@ -18,7 +18,12 @@
     <div class="row">
       {% for page in section.pages %}
       <a href="{{ page.permalink | safe }}" class="logo">
-        <img width="75px" height="75px" src="{{ page.extra.logo_url }}" />
+        <img
+          width="75px"
+          height="75px"
+          src="{{ page.extra.logo_url }}"
+          alt="{{ page.title }}"
+        />
       </a>
       {% endfor %}
     </div>
