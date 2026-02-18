@@ -2,7 +2,7 @@ base_url = "https://tornaxo7.de"
 
 # The site title and description; used in feeds by default.
 title = "TornaxO7's webpage"
-description = "TornaxO7's webpage"
+description = "The website of TornaxO7"
 
 # The default language; used in feeds.
 default_language = "en"

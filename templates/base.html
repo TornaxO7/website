@@ -6,6 +6,11 @@
     <meta name="author" content="{{ config.author }}" />
     <meta name="description" content="{{config.description}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="{{config.title}}" />
+    <meta property="og:image" content="/{{config.extra.profile_picture}}" />
+    <meta property="og:description" content="{{config.description}}" />
+
     <link rel="stylesheet" href="{{ get_url(path='/style.css')}} " />
 
     <!-- sizes from: https://numberchomper.com/en/favicon-generator -->
