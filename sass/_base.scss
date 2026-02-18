@@ -46,21 +46,21 @@ body {
 }
 
 .blur-light {
-  $strength: 2px;
+  $strength: 10px;
 
   backdrop-filter: blur($strength);
   -webkit-backdrop-filter: blur($strength);
 }
 
 .blur-mid {
-  $strength: 8px;
+  $strength: 20px;
 
   backdrop-filter: blur($strength);
   -webkit-backdrop-filter: blur($strength);
 }
 
 .blur-strong {
-  $strength: 50px;
+  $strength: 30px;
 
   backdrop-filter: blur($strength);
   -webkit-backdrop-filter: blur($strength);
