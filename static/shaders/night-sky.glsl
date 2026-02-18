@@ -8,12 +8,6 @@ uniform vec2 iResolution;
 
 out vec4 fragColor;
 
-const vec3 NIGHT_BLUE = vec3(0.,7.,111.) / 255.;
-const vec3 NIGHT_PURPLE = vec3(68.,0.,139.)/255.;
-const vec3 NIGHT_MAGENTA = vec3(159.,69.,176.)/255.;
-const vec3 NIGHT_LIGHT = vec3(255.,228.,242.)/255.;
-const vec3 TURQUOISE = vec3(0., .7, .9);
-
 const float PI = acos(-1.);
 
 float hash11(float p)
@@ -85,34 +79,33 @@ float stars(vec2 uv, float size) {
     return y;
 }
 
-vec3 star_layers(vec2 uv) {
+vec3 star_layers(vec3 base_color, vec2 uv) {
     vec3 col = vec3(0.);
-    for (int i = 1; i <= 3; ++i) {
+    for (int i = 1; i <= 2; ++i) {
       float a = float(i) * 2.;
 
-      col = max(col, NIGHT_LIGHT * stars(rotate(a) * uv * a, .01));
+      col = max(col, base_color * stars(rotate(a) * uv * a, .01));
     }
 
     return col;
 }
 
 float mountains(vec2 uv) {
-    float m = 0.;
-
     const float FACTOR = 5.;
 
     uv.y *= FACTOR;
 
     float y = 0.;
-    y += 2.1 * sin(PI * .01 * uv.x);
-    y += 3.5 * sin(PI * .03 * uv.x);
-    y += 2.0 * sin(PI * .08 * uv.x);
-    y += 4.0 * sin(PI * .01 * uv.x);
-    y += 2.0 * sin(PI * .21 * uv.x);
+    float amp = 10. + iSeed;
+    float freq = max(.2 - iSeed, .1);
+    for (int i = 0; i < 8; ++i) {
+        y += amp * sin(uv.x * freq + iSeed*100.*float(i));
 
-    m = smoothstep(-.1, .1, y - uv.y);
+        freq *= 2.;
+        amp *= .5;
+    }
 
-    return m;
+    return smoothstep(-.1, .1, y - uv.y);
 }
 
 float shooting_star(vec2 uv, float rotation, float speed, float offset) {
@@ -145,10 +138,10 @@ void main() {
     uv.y *= -1.;
 
     vec3 col = vec3(0.);
-    col += NIGHT_BLUE * .2;
-    col += star_layers(3. * uv + iTime * .01);
+    col += vec3(.2) + vec3(.1) * cos(2. * PI * (vec3(.1, .5, .5) * (1. - gl_FragCoord.y / iResolution.y) + vec3(.4, .5, .8)));
+    col += star_layers(col, 3. * uv + vec2(iTime*.05, 0.));
     col += shooting_stars(uv);
-    col *= vec3(mountains(10. * (uv + vec2(iTime * .1, -.7))));
+    col *= mountains(10. * (uv + vec2(iTime * .1 + iSeed*100., -.7)));
 
     fragColor = vec4(col, 1.);
 }
