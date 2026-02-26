@@ -29,7 +29,7 @@ float sdfCircle(vec2 p, float r) {
 }
 
 float circleGrid(vec2 uv) {
-    float time = iTime + iSeed*100.;
+    float time = iTime*.5 + iSeed*100.;
     uv.y += time*.5;
     vec2 id = floor(uv);
     vec2 h = hash22(id);
@@ -58,7 +58,7 @@ vec3 background_color(vec2 uv) {
 }
 
 float wave(vec2 uv, float offset) {
-    float time = iTime + iSeed*500.;
+    float time = iTime*.5 + iSeed*500.;
 
     float x_offset = offset;
     float x_movement = time*.1;
