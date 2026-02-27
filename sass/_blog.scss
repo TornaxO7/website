@@ -8,17 +8,25 @@
   // let the content of the page start from the top
   justify-content: flex-start;
 
+  gap: 1cm;
+
   .blog-entry {
     @extend
-      .blur-mid,
+      .blur-strong,
       .rounded-corner,
       .glowing-border;
 
     text-decoration: none;
 
-    /* background: red; */
     width: 100%;
     padding: $padding;
+
+    background-color: rgba($background, 0.6);
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: rgba($selection-background, 0.6);
+    }
 
     .blog-entry-title {
       @extend
@@ -46,16 +54,6 @@
 
     .blog-entry-description {
       color: $foreground;
-    }
-
-    background: linear-gradient(to right, $black, $selection-background);
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    background-position: left;
-    transition: background-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
-
-    &:hover {
-      background-size: 100% 100%;
     }
   }
 }

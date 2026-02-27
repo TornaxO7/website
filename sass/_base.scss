@@ -60,7 +60,7 @@ body {
 }
 
 .blur-strong {
-  $strength: 30px;
+  $strength: 50px;
 
   backdrop-filter: blur($strength);
   -webkit-backdrop-filter: blur($strength);
