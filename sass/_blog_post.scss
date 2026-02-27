@@ -3,7 +3,7 @@
 
   .blog-post-content {
     @extend
-      .blur-light,
+      .blur-strong,
       .block;
 
     background-color: rgba($background, 0.75);
