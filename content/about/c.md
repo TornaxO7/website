@@ -3,7 +3,7 @@ title = "C"
 
 [extra]
 homepage = "https://en.cppreference.com/w/c.html"
-logo_url = "https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20190417225046%21The_C_Programming_Language_logo.svg"
+logo_url = "https://img.icons8.com/color/240/c-programming.png"
 +++
 
 I taught myself `C` thanks to the open book by [Rheinwerk]: (it's in german) ["C von A bis Z"].
