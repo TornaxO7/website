@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /shaders/
+Disallow: /naughty-bots/
 Allow: /
 Sitemap: {{ get_url(path="sitemap.xml") }}
